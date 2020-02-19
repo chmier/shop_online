@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Taco Cloud</title>
+    <link rel="stylesheet" th:href="@{/styles.css}"/>
+</head>
+
+<body>
+<h1>Create your order!</h1>
+<h2>Hi, <span th:text="${user.fullname}">NAME</span>?</h2>
+<img th:src="@{/images/wood.png}"/>
+
+<form method="POST" th:action="@{/logout}" id="logoutForm">
+    <input type="submit" value="Logout"/>
+</form>
+
+<form th:method="POST" th:object="${design}" th:action="@{/design}" id="Form">
+
+    <span class="validationError"
+          th:if="${#fields.hasErrors('furnitures')}"
+          th:errors="*{furnitures}">Ingredient Error</span>
+
+    <div class="grid">
+        <div class="furniture-group" id="chairs">
+            <h3>Chose chair type:</h3>
+            <div th:each="furniture : ${chairs}">
+                <input name="furnitures" type="checkbox" th:value="${furniture.id}"/>
+                <span th:text="${furniture.name}">Furniture</span></br>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div class="furniture-group" id="tables">
+        <h3>Choose table color:</h3>
+        <div th:each="furniture : ${tables}">
+            <input name="furnitures" type="checkbox" th:value="${furniture.id}"/>
+            <span th:text="${furniture.name}">Furniture</span></br>
+        </div>
+    </div>
+    </div>
+
+
+    <div>
+
+        <br/>
+        <h3> Podaj nazwe swojej kategorii</h3>
+        <input type="text" th:field="*{name}">
+        <span class="validationError"
+              th:if="${#fields.hasErrors('name')}"
+              th:errors="*{name}">Name Error</span>
+        <br/>
+        <input type="submit" value="Submit order"/>
+        <button>Submit</button>
+    </div>
+</form>
+</body>
+</html>

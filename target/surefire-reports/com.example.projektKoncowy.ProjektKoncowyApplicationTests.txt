@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.example.projektKoncowy.ProjektKoncowyApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 11.511 s <<< FAILURE! - in com.example.projektKoncowy.ProjektKoncowyApplicationTests
+contextLoads  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.boot.context.properties.ConfigurationPropertiesBindException: Error creating bean with name 'userConfiguration': Could not bind properties to 'UserConfiguration' : prefix=users, ignoreInvalidFields=false, ignoreUnknownFields=true; nested exception is org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under 'users' to com.example.projektKoncowy.configuration.UserConfiguration$$EnhancerBySpringCGLIB$$b4c86caa
+Caused by: org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under 'users' to com.example.projektKoncowy.configuration.UserConfiguration$$EnhancerBySpringCGLIB$$b4c86caa
+Caused by: javax.validation.ValidationException: HV000090: Unable to access isUserCorrect.
+Caused by: java.lang.reflect.InvocationTargetException
+Caused by: java.lang.NullPointerException
+
