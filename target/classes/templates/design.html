@@ -2,13 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Taco Cloud</title>
+    <title>Shop online</title>
     <link rel="stylesheet" th:href="@{/styles.css}"/>
 </head>
 
 <body>
+
+<h2>Hi, <span th:text="${user.username}">NAME</span>?</h2>
 <h1>Create your order!</h1>
-<h2>Hi, <span th:text="${user.fullname}">NAME</span>?</h2>
 <img th:src="@{/images/wood.png}"/>
 
 <form method="POST" th:action="@{/logout}" id="logoutForm">
@@ -30,6 +31,8 @@
             </div>
         </div>
     </div>
+    <img th:src="@{/images/angel.png}"/>
+
 
     </div>
     <div class="furniture-group" id="tables">
@@ -40,7 +43,7 @@
         </div>
     </div>
     </div>
-
+    <img th:src="@{/images/svenn.png}"/>
 
     <div>
 
