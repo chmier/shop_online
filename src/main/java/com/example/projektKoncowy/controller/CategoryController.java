@@ -64,6 +64,8 @@ public class CategoryController
         for (TypeOfFurniture type : types) {
             model.addAttribute(type.toString().toLowerCase(),
                     filterByType(furnitures, type));
+
+            
         }
 
         String username = principal.getName();
@@ -78,7 +80,7 @@ public class CategoryController
             @Valid Category category, Errors errors,
             @ModelAttribute Order order) {
 
-        log.info("   --- Saving taco");
+        log.info("   --- Saving order");
 
         if (errors.hasErrors()) {
             return "design";

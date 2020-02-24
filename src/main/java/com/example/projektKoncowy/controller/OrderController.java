@@ -49,7 +49,7 @@ public class OrderController {
         return "orderForm";
     }
 
-    // tag::processOrderWithAuthenticationPrincipal[]
+
     @PostMapping
     public String processOrder(@Valid Order order, Errors errors,
                                SessionStatus sessionStatus,
